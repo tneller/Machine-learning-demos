@@ -1,7 +1,8 @@
 ### Independent study on Data Mining(2015 Spring)
 
 Unsupervised Learning
-* K-means clustering
-* 
+* [X]K-means clustering
+* [X]DBSCAN clustering
+* [X]hierarchical clustering
 
-Here's an idea: why don't we take `SuperiorProject` and turn it into `**Reasonable**Project`.
+
