@@ -1,8 +1,12 @@
-### Independent study on Data Mining(2015 Spring)
+### Independent study on Data Mining
 
-Unsupervised Learning
-* [x] K-means clustering
-* [x] DBSCAN clustering
-* [x] hierarchical clustering
+####Unsupervised Learning
+Unsupervised learning is to find hidden structure in unlabeled data.
+1. Information retrieval and PageRank
 
-
+2. Clustering 
+	* [K-means clustering](google.com)
+	* [DBSCAN clustering](google.com)
+	* [hierarchical clustering](google.com)
+	* spectral clustering: //TODO
+3. 
