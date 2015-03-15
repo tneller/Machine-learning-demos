@@ -19,7 +19,7 @@ Algorithm(using foggy initialization):
 Centroid is defined as average of all observations in the cluster.
 
 Properties of K-means algorithm:
-* this algorithm __does not guaranteed__ to converge at global minimum, in other word, it will sometimes converge at a local minimum which is not a good cluster. So we need to iterate the algorithm many times at __different random initialization__ to get better results(smaller within-cluster variation), but it is still not guaranteed to find the global minimum.
+* this algorithm __does not guarantee__ to converge at global minimum, in other word, it will sometimes converge at a local minimum which is not a good cluster. So we need to iterate the algorithm many times at __different random initialization__ to get better results(smaller within-cluster variation), but it is still not guaranteed to find the global minimum.
 
 ***
 #####Estimate best K by gap statistic
