@@ -11,10 +11,10 @@ Initialization methods:
 
 Algorithm(using foggy initialization):
 
-    1. randomly pick K observations as the centroid
-    2. repeat until converge: 
-        1. assign each observation to the cluster whose centroid is closest
-        2. recompute the centroid of each cluster
+1. randomly pick K observations as the centroid
+2. repeat until converge: 
+    1. assign each observation to the cluster whose centroid is closest
+    2. recompute the centroid of each cluster
 
 Centroid is defined as average of all observations in the cluster.
 
@@ -26,9 +26,9 @@ Properties of K-means algorithm:
 
 This method can estimate the best K(range from 1 to n) for K-means clustering
 
-    1. Apply K-means algorithm to the dataset using k = 1,...,n to compute each __W_k__
-    2. Uniformly generate m groups of datasets in the __bounding box__ of original data, and apply K-means algorithm to generated dataset using k = 1,...,n to compute each __W_k__, then take the average __W_k'__
-    3. Compute the gap of each K by the formula: Gap(k) = log(__W_k'__) - log(__W_k__)
+1. Apply K-means algorithm to the dataset using k = 1,...,n to compute each __W_k__
+2. Uniformly generate m groups of datasets in the __bounding box__ of original data, and apply K-means algorithm to generated dataset using k = 1,...,n to compute each __W_k__, then take the average __W_k'__
+3. Compute the gap of each K by the formula: Gap(k) = log(__W_k'__) - log(__W_k__)
 
 The optimal K will have the greatest gap.
 
