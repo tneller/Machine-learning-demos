@@ -2,6 +2,7 @@
 
 ####Unsupervised Learning
 Unsupervised learning is to find hidden structure in unlabeled data.
+
 1. Information retrieval and PageRank
 
 2. Clustering 
@@ -9,4 +10,4 @@ Unsupervised learning is to find hidden structure in unlabeled data.
 	* [DBSCAN clustering](google.com)
 	* [hierarchical clustering](google.com)
 	* spectral clustering: //TODO
-3. 
+3. Regression
