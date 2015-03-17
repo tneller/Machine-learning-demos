@@ -1,4 +1,6 @@
-
+/**
+ * Point class
+ */
 public class Point
 {
 	private double x,y;
@@ -7,6 +9,7 @@ public class Point
 		this.x = x;
 		this.y = y;
 	}
+	//getters and setters
 	public double getX() 
 	{
 		return x;
@@ -23,6 +26,7 @@ public class Point
 	{
 		this.y = y;
 	}
+	// return true if two points are equal
 	public boolean equals(Point p) 
 	{
 		return ((this.x == p.x) && (this.y == p.y));
