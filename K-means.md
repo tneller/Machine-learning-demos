@@ -20,6 +20,7 @@ Centroid is defined as average of all observations in the cluster.
 
 Properties of K-means algorithm:
 * this algorithm __does not guarantee__ to converge at global minimum, in other word, it will sometimes converge at a local minimum which is not a good cluster. So we need to iterate the algorithm many times at __different random initialization__ to get better results(smaller within-cluster variation), but it is still not guaranteed to find the global minimum.
+* k-means algorithms works requires spherical data and clusters with similar variance.
 
 ***
 #####Estimate best K by gap statistic
@@ -32,3 +33,6 @@ This method can estimate the best K(range from 1 to n) for K-means clustering
 
 The optimal K will have the greatest gap.
 
+#####Examples
+
+![](src/kmeans/pic/km1.tiff)
