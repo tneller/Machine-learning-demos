@@ -1,38 +1,44 @@
 ####DBSCAN clustering
 
-This algorithm will partition the dataset into given number of clusters by minimize the sum of _within-cluster variation_ __w__  of all clusters, denoted as __W__ .(However, we can use the gap statistic to infer the best K).
+Compare to the K-means algorithm, this is a density-based clustering algorithm, which means it can deal with datasets with any shape. And it can also detect noise points. Good for data which contains clusters of similar density.
 
-*within-cluster variation of a cluster*: sum of all distance between all pairs of observation divided by number of observations. (*squared Euclidean distance* is the most used measure of distance)
+parameters:
+  * eps: The maximum distance between two samples for them to be considered as in the same neighborhood.
+  * minpts: The number of samples in a neighborhood for a point to be considered as a core point.
 
-Initialization methods:
+Pseudocode from wiki:
 
-1. __Random Partition__: each observation is randomly assign to one of the clusters.
-2. __Foggy__: randomly pick K observations as the centroid.
+        DBSCAN(D, eps, MinPts)
+           C = 0
+           for each unvisited point P in dataset D
+              mark P as visited
+              NeighborPts = regionQuery(P, eps)
+              if sizeof(NeighborPts) < MinPts
+                 mark P as NOISE
+              else
+                 C = next cluster
+                 expandCluster(P, NeighborPts, C, eps, MinPts)
+                  
+        expandCluster(P, NeighborPts, C, eps, MinPts)
+           add P to cluster C
+           for each point P' in NeighborPts 
+              if P' is not visited
+                 mark P' as visited
+                 NeighborPts' = regionQuery(P', eps)
+                 if sizeof(NeighborPts') >= MinPts
+                    NeighborPts = NeighborPts joined with NeighborPts'
+              if P' is not yet member of any cluster
+                 add P' to cluster C
+                  
+        regionQuery(P, eps)
+           return all points within P's eps-neighborhood (including P)
 
-Algorithm(using foggy initialization):
-
-1. randomly pick K observations as the centroid
-2. repeat until converge: 
-1. assign each observation to the cluster whose centroid is closest
-2. recompute the centroid of each cluster
-
-Centroid is defined as average of all observations in the cluster.
-
-Properties of K-means algorithm:
-* this algorithm __does not guarantee__ to converge at global minimum, in other word, it will sometimes converge at a local minimum which is not a good cluster. So we need to iterate the algorithm many times at __different random initialization__ to get better results(smaller within-cluster variation), but it is still not guaranteed to find the global minimum.
-* k-means algorithms requires spherical data and clusters with similar variance.
-
-***
-#####Estimate best K by gap statistic
-
-This method can estimate the best K(range from 1 to n) for K-means clustering
-
-1. Apply K-means algorithm to the dataset using k = 1,...,n to compute each __W_k__
-2. Uniformly generate m groups of datasets in the __bounding box__ of original data, and apply K-means algorithm to generated dataset using k = 1,...,n to compute each __W_k__, then take the average __W_k'__
-3. Compute the gap of each K by the formula: Gap(k) = log(__W_k'__) - log(__W_k__)
-
-The optimal K will have the greatest gap.
+Properties of DBSCAN algorithm:
+  * No need to specify number of clusters
+  * Two parameters needs to be tuned
 
 #####Examples
+<img src="pic/db2.png" alt="kmeans" width="300" height="300"> succeed
+<img src="pic/db1.png" alt="kmeans" width="300" height="300"> failed
 
-![](src/kmeans/pic/km1.tiff)
+[Java code](src/DBSCAN/DBScan.java)
