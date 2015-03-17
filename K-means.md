@@ -35,4 +35,6 @@ The optimal K will have the greatest gap.
 
 #####Examples
 
-![](src/kmeans/pic/km1.tiff)
+<img src="pic/km1.png" alt="kmeans" width="300" height="300"> succeed
+<img src="pic/km2.png" alt="kmeans" width="300" height="300"> failed
+
