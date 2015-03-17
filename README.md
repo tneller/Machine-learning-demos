@@ -12,6 +12,12 @@ Unsupervised learning is to find hidden structure in unlabeled data.
 	* [DBSCAN clustering](DBSCAN.md)
 	* [hierarchical clustering](Hierarchical.md)
 	* spectral clustering: //TODO
-3. Regression
-	* Simple linear regression
-	* Linear regression for polynomial equation
+
+####Unsupervised Learning
+Supervised learning is to make predictions based on given training set(inputs and outputs)
+
+1. Regression
+	* [Simple linear regression](SimpleLinear.md)
+	* [Linear regression for polynomial equation](PolyRegression.md)
+
+2. Classification
