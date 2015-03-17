@@ -5,8 +5,13 @@ import java.util.LinkedList;
 public class Clusters 
 {
 	double innerDist;//within-cluster sum of square
-	LinkedList<Point>[] clusters;
+	LinkedList<Point>[] clusters; // data structure to store points
 	Point[] centroids;//array of centroids
+	
+	/**
+	 * getters and setters
+	 */
+	
 	public double getInnerDist() 
 	{
 		return innerDist;
