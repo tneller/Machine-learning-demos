@@ -1,15 +1,16 @@
 import java.awt.*;
 import java.io.*;
 import java.util.*;
-
 import javax.swing.*;
+
+
 public class KMeans 
 {	
 	// Nine colors for plotting 
 	static Color [] COLORS = {Color.magenta,Color.cyan,Color.gray,Color.green,Color.red,Color.pink,Color.yellow,Color.blue,Color.orange};
 	/**
 	 * Load data from given file
-	 * @param filename
+	 * @param filename given file
 	 * @return List of data points
 	 * @throws IOException
 	 */
@@ -18,7 +19,7 @@ public class KMeans
 		FileReader r = new FileReader(filename);
 		BufferedReader reader = new BufferedReader(r);
 		String line = reader.readLine();
-		line = reader.readLine();
+		line = reader.readLine();// skip first two lines
 		line = reader.readLine();
 		LinkedList<Point> list = new LinkedList<Point>();
 		while(line!=null)
@@ -112,8 +113,8 @@ public class KMeans
 	}
 	/**
 	 * Computes distance of two points
-	 * @param a
-	 * @param b
+	 * @param a point a 
+	 * @param b point b
 	 * @return
 	 */
 	public static double computeDist(Point a,Point b)
@@ -134,7 +135,7 @@ public class KMeans
 		Point[] centroids = new Point[k];
 		centroids = computeCentroid(clusters,centroids);
 		double dist = computeInnerDist(clusters,centroids);
-		while(!converged)
+		while(!converged) // repeat 1. compute centroid; 2. reassign points until converge
 		{
 			reassign(clusters, centroids);
 			centroids = computeCentroid(clusters,centroids);
@@ -147,8 +148,8 @@ public class KMeans
 			{
 				converged = true;
 			}
-			
 		}
+		// undate the iteration 
 		iteration.setInnerDist(dist);
 		iteration.setCentroids(centroids);
 		iteration.setClusters(clusters);
@@ -179,6 +180,7 @@ public class KMeans
 	
 	public static void plot(Clusters iteration)
 	{
+		// basic settings for the plotting
 		JFrame frame = new JFrame();
 		frame.setSize(600, 600);
 		frame.setVisible(true);
@@ -198,15 +200,17 @@ public class KMeans
 			g.setColor(COLORS[i]);
 			for(Point p: cluster)
 			{
+				// draw data points
 				g.drawOval(Math.round((float)(p.getX()*600)), Math.round((float)(p.getY()*600)), 3, 3);
 			}
 			g.setColor(Color.BLACK);
+			// draw centroids
 			g.fillOval((int)(centroids[i].getX()*600), (int)(centroids[i].getY()*600), 10, 10);
 		}
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	/**
-	 * Computes the range of normally distributed data
+	 * Get the bounding box of dataset for sample data generating
 	 * @param data
 	 * @return the array of range
 	 */
@@ -239,7 +243,7 @@ public class KMeans
 		return box;
 	}
 	/**
-	 * Generates normally distributed data set
+	 * Generates uniformly distributed data set in given bounding box
 	 * @param range
 	 * @param num
 	 * @return list of random data set
@@ -286,17 +290,22 @@ public class KMeans
 			double[] range = boundingBox(data);
 			Clusters bestIter = new Clusters();
 			double gap = 0;
+			// apply gap statistic for k = 1,...,9
 			for(int i = 1;i<=9;i++)
 			{
+				// compute average WCSS for generated data of 30 iterations
 				double sampleWk = 0;
 				for(int j = 0;j<30;j++)
 				{
 					sampleWk += kmeans(generateSample(range,data.size()),i).getInnerDist();
 				}
 				sampleWk /= 30;
+				// compute WCSS of dataset
 				Clusters iteration= kmeans(data,i);
 				double dataWk = iteration.getInnerDist();
+				//compute the gap of logarithm
 				double currGap = Math.log(sampleWk)-Math.log(dataWk);
+				// pick the k with largest gap as the optimum K
 				if(gap < currGap)
 				{
 					gap = currGap;
