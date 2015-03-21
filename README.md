@@ -18,6 +18,6 @@ Supervised learning is to make predictions based on given training set(inputs an
 
 1. Regression
 	* [Simple linear regression](SimpleLinear.md)
-	* [Linear regression for polynomial equation](PolyRegression.md)
+	* [Multivariate Linear regression](PolyRegression.md)
 
 2. Classification
