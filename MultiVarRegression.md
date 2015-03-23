@@ -31,8 +31,10 @@ compare to gradient descent, dicrectly solving the equation have following prope
 
 1. Overfitting and underfitting
 
- When we have too few features, the model will not be sufficient to fit the training set, which is called underfitting. When we have too many features, the model will fit the training set very well, but will fail to gereralize(to predict), which is called overitting.
+ When we have too few features, the model will not be sufficient to fit the training set, which is called underfitting. When we have too many features, the model will fit the training set very well, but will fail to generalize(to predict), which is called overitting.
 
 2. Regularization
 
  To avoid overfitting, we regularize our model, which keeps all the features, but reduce magnitude of parameters. This method will pull all parameters towards zero, and let less effective parameters have even less effect on the model.
+
+[Python code](src/Regression/NormalPoly.py)
