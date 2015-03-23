@@ -37,4 +37,5 @@ compare to gradient descent, dicrectly solving the equation have following prope
 
  To avoid overfitting, we regularize our model, which keeps all the features, but reduce magnitude of parameters. This method will pull all parameters towards zero, and let less effective parameters have even less effect on the model.
 
+<img src="pic/linear2.png" alt="linear" width="850" height="450">
 [Python code](src/Regression/NormalPoly.py)
