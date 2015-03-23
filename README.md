@@ -3,9 +3,7 @@
 ####Unsupervised Learning
 Unsupervised learning is to find hidden structure in unlabeled data.
 
-1. Information retrieval and PageRank
-	* [Information retrieval](IR.md)
-	* [PageRank](PageRank.md)
+1. [Information retrieval and PageRank](IR&PageRank.md)
 
 2. Clustering 
 	* [K-means clustering](K-means.md)
