@@ -35,7 +35,7 @@ The optimal K will have the greatest gap.
 
 #####Examples
 
-<img src="pic/km1.png" alt="kmeans" width="300" height="300"> succeed
-<img src="pic/km2.png" alt="kmeans" width="300" height="300"> failed
+<img src="pic/km1.png" alt="kmeans1" width="300" height="300"> succeed
+<img src="pic/km2.png" alt="kmeans2" width="300" height="300"> failed
 
 [Java code](src/kmeans/KMeans.java)
