@@ -21,6 +21,6 @@ Supervised learning is to make predictions based on given training set(inputs an
 	* Naive Bayes classifier
 	* K Nearest Neighbors classifier
 	* Logistic classifier
-	* Decision tree classifier
+	* Tree based classifiers
 	* Support vector machine
 		
