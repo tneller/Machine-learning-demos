@@ -15,6 +15,12 @@ Supervised learning is to make predictions based on given training set(inputs an
 
 1. Regression
 	* [Simple linear regression](SimpleLinear.md)
-	* [Multivariate Linear regression](MultiVarRegression.md)
+	* [Multivariate Linear regression with regularization](MultiVarRegression.md)
 
 2. Classification
+	* Naive Bayes classifier
+	* K Nearest Neighbors classifier
+	* Logistic classifier
+	* Decision tree classifier
+	* Support vector machine
+		
