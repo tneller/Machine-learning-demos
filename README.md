@@ -8,7 +8,7 @@ Unsupervised learning is to find hidden structure in unlabeled data.
 2. Clustering 
 	* [K-means clustering](K-means.md)
 	* [DBSCAN clustering](DBSCAN.md)
-	* [hierarchical clustering](Hierarchical.md)
+	* [Hierarchical clustering](Hierarchical.md)
 
 ####Unsupervised Learning
 Supervised learning is to make predictions based on given training set(inputs and outputs)
