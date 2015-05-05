@@ -11,9 +11,11 @@ And its derivative is :
 
 <img src="http://www.forkosh.com/mathtex.cgi? \beta'(x) =  \beta(x) \cdot ( 1-\beta(x) ) ">
 
-The probabilities can be computed by:
+We can define the reverse of the logistic fundtion ,_g(x)_, logit.:
 
-<img src="http://www.forkosh.com/mathtex.cgi? log\left( \frac{\beta(x)}{1-\beta(x)} \right) = \beta_0 + \beta_1x">
+<img src="http://www.forkosh.com/mathtex.cgi? g(\beta(x)) = log\left( \frac{\beta(x)}{1-\beta(x)} \right) = \lambda_0 + \lambda_1x">
+
+When we have more than 2 classes, 
 
 Properties:
   1. Computationally inexpensive
