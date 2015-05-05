@@ -11,6 +11,10 @@ And its derivative is :
 
 <img src="http://www.forkosh.com/mathtex.cgi? \beta'(x) =  \beta(x) \cdot ( 1-\beta(x) ) ">
 
+The probabilities can be computed by:
+
+<img src="http://www.forkosh.com/mathtex.cgi? log\left( \frac{\beta(x)}{1-\beta(x)} \right) = \beta_0 + \beta_1x">
+
 Properties:
   1. Computationally inexpensive
   2. easy to implement and interpret
