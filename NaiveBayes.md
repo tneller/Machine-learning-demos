@@ -6,5 +6,11 @@ We calculate the probablility for each class using the conditional distribution 
 
 #####Naive Bayes Classifier
 However, full Bayes classifier is fraught with estimation related problems when the number of dimension is large. Thus, the naive bayes classifer makes a assumption that all features are independent. This assumption makes the classifier much easier. It immediately implies that the likelihood can be computed by the product of dimension-wise probabilities:
-
-P(x|c) = P(x|c1)P(x|c)P(x|c) ... P(x|cd) 
+__P(x|c) = P(x|c1)P(x|c2)P(x|c3) ... P(x|cd)__
+Properties:
+  1. cannot capture correlations in features
+  2. cannot capture dependencies in features
+  3. work with small amount of data
+  4. handle multiple classes
+  5. work with nominal values
+  
