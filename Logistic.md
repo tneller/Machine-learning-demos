@@ -15,7 +15,7 @@ We can define the reverse of the logistic fundtion ,_g(x)_, logit.:
 
 <img src="http://www.forkosh.com/mathtex.cgi? g(\beta(x)) = log\left( \frac{\beta(x)}{1-\beta(x)} \right) = \lambda_0 + \lambda_1x">
 
-When we have more than 2 classes, 
+When we have more than 2 classes, we can use a "one against other" aproach to compute the properbility for each class, and then we can select the most probable one. 
 
 Properties:
   1. Computationally inexpensive
