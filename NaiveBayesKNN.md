@@ -34,6 +34,4 @@ Properties:
   5. easily overfitting when k is small.
   6. can also be applied to regression problems.
   
-// picture 
-
-// code
+[Python code](src/Classification/kNN.py)
