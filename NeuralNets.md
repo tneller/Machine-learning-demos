@@ -29,4 +29,4 @@ Take XOR as an example:
 
 <img src="pic/nn1.png" alt="nn1" width="300" height="300">
 
-[Python code](src/Classification/NeuralNetXOR.java)
+[Python code](src/Classification/NeuralNetXOR.py)
