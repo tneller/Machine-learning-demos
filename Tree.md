@@ -28,4 +28,7 @@ The basic idea is that by having lots of learners that each get slightly differe
   
   A boostrao sample is a sample taken from the original datasets with replacement. So we will get a slightly different datasets.
  
+#####Stumping
+
+There is a extreme from of boosting applied to trees which is stumping. It just takes the root of trees and use that as a decision maker. And those roots are make by a single feature. So after some interation on weights, we can find the important features. 
   
