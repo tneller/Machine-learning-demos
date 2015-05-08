@@ -1,14 +1,5 @@
 import numpy as np
-
-def logistic(x):
-    return 1.0/(1.0 + np.exp(-x))
-
-def logistic_derivative(y):
-    return y*(1-y)
-
-
 class NeuralNetwork:
-
     def __init__(self, layers):
         self.weights = []
         #hidden layer weights
@@ -49,8 +40,12 @@ class NeuralNetwork:
         for l in range(0, len(self.weights)):
             a = logistic(np.dot(a, self.weights[l]))
         return a
+        
+    def logistic(x):
+        return 1.0/(1.0 + np.exp(-x))
 
-
+    def logistic_derivative(y):
+        return y*(1-y)
 
 nn = NeuralNetwork([2,2,1])
 XOR = np.array([[0, 0],[0, 1],[1, 0],[1, 1]])
