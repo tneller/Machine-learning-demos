@@ -13,6 +13,14 @@ For decision tree, the best feature to pick is the one that gives yo the most im
 
 After using that feature, we re-evaluate the entropy of each feature and pick the one with highest entropy again.
 
+#####Learning Decision Trees
+
+1. Each comparison nodeconsists of the selected feature index, and a threshold for comparison. 
+2. We determine the values of these parameters by a simple exhaustive search, looping over all possible features and all possible thresholds and evaluating some score function, then picking the parameters that result in the best score. 
+3. Although the threshold is a continuous value, there are only a finite number of possible choices. 
+4. When the training data are sorted along the feature being considered, any threshold falling between two given data points results in exactly the same rule on the training data. 
+5. We can thus enumerate the number of unique threshold sand pick the mean of the two nearest data points as the value.
+
 #####Ensemble learning
 
 The basic idea is that by having lots of learners that each get slightly different results on a dataset. 
